@@ -9,11 +9,11 @@ import { AiFillCalendar } from 'react-icons/ai';
 import { FaLanguage } from 'react-icons/fa';
 
 function App() {
-  const [username, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [loading, setloading] = useState(false);
   const [repos, setRepos] = useState([])
   const [detailes, setDetailes] = useState([])
-  const baseUrl = `https://api.github.com/search/repositories?q=${username}`
+  const baseUrl = `https://api.github.com/search/repositories?q=${name}`
 
   //When Submit Search Form
   function handleSubmit(e) {
@@ -64,11 +64,11 @@ function App() {
     let dayAge = Math.floor(age / 1000 / 60 / 60 / 24)
     let hourAge = Math.floor(age / 1000 / 60 / 60)
     let minAge = Math.floor(age / 1000 / 60)
-    if (yearAge >= 1) { return (`${yearAge} +" "+"Year Ago"`) }
-    else if (yearAge < 1 && monthAge >= 1) { return (`${monthAge} +" "+ "Month Ago"`) }
-    else if (monthAge < 1 && dayAge >= 1) { return (`${dayAge} +" "+"Day Ago"`) }
-    else if (dayAge < 1 && hourAge >= 1) { return (`${hourAge} +" "+"Hour Ago"`) }
-    else { return (`${minAge} +" "+"Min Ago"`) }
+    if (yearAge >= 1) { return (`${yearAge} Year Ago`) }
+    else if (yearAge < 1 && monthAge >= 1) { return (`${monthAge} Month Ago`) }
+    else if (monthAge < 1 && dayAge >= 1) { return (`${dayAge} Day Ago`) }
+    else if (dayAge < 1 && hourAge >= 1) { return (`${hourAge} Hour Ago `) }
+    else { return (`${minAge} Min Ago`) }
   }
 
 
@@ -128,9 +128,9 @@ function App() {
           <form className='form'>
             <input
               className='input'
-              value={username}
+              value={name}
               placeholder="Enter Repository Name"
-              onChange={e => setUserName(e.target.value)}
+              onChange={e => setName(e.target.value)}
             />
             <button className='button' onClick={handleSubmit}>{loading ? "Searching....." : "Search"}</button>
           </form>
