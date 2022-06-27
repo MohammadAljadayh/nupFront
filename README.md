@@ -1,6 +1,6 @@
 # Github RestApi Search Repo
 ### Demo
-Netlify: [Link](https://62ba2e87c6700900bdc45cca--kaleidoscopic-donut-d9fcd5.netlify.app/)
+Netlify: [Link](https://kaleidoscopic-donut-d9fcd5.netlify.app/)
 
 ### Installation
 
